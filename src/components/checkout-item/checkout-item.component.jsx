@@ -3,7 +3,16 @@ import { useContext } from "react";
 import { AiFillDelete, AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { CartContext } from "../../contexts/cart-context";
 
-import "./checkout-item.styles.scss";
+import {
+  CheckoutItemContainer,
+  ImageContainer,
+  Name,
+  Quantity,
+  Arrow,
+  Price,
+  Value,
+  RemoveButton,
+} from "./checkout-item.styles.jsx";
 
 const CheckoutItem = ({ cartItem }) => {
   const { name, imageUrl, price, quantity } = cartItem;
@@ -16,25 +25,25 @@ const CheckoutItem = ({ cartItem }) => {
   const deleteItemHandler = () => deleteItemFromCart(cartItem);
 
   return (
-    <div className="checkout-item-container">
-      <div className="image-container">
+    <CheckoutItemContainer>
+      <ImageContainer>
         <img src={imageUrl} alt={`${name}`} />
-      </div>
-      <span className="name">{name}</span>
-      <span className="quantity">
-        <div className="arrow" onClick={removeItemHandler}>
+      </ImageContainer>
+      <Name>{name}</Name>
+      <Quantity>
+        <Arrow onClick={removeItemHandler}>
           <AiOutlineLeft />
-        </div>
-        <span className="value">{quantity}</span>
-        <div className="arrow" onClick={addItemHandler}>
+        </Arrow>
+        <Value>{quantity}</Value>
+        <Arrow onClick={addItemHandler}>
           <AiOutlineRight />
-        </div>
-      </span>
-      <span className="price">${price}</span>
-      <div className="remove-button">
+        </Arrow>
+      </Quantity>
+      <Price>${price}</Price>
+      <RemoveButton>
         <AiFillDelete onClick={deleteItemHandler} />
-      </div>
-    </div>
+      </RemoveButton>
+    </CheckoutItemContainer>
   );
 };
 
