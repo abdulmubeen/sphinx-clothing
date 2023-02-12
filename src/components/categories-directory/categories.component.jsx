@@ -1,5 +1,3 @@
-import { useSelector } from "react-redux";
-
 import CategoryItem from "../category-item/category-item.component";
 import { CategoriesContainer } from "./categories.styles.jsx";
 
@@ -37,8 +35,6 @@ const categories = [
 ];
 
 const CategoriesDirectory = () => {
-  const data = useSelector((state) => state.currentUser);
-  console.log(data);
   return (
     <CategoriesContainer>
       {categories.map((category) => (
