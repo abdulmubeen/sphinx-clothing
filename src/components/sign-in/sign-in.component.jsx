@@ -53,11 +53,11 @@ const SignInForm = () => {
   };
   return (
     <SignInContainer>
-      <Title>Already have an account?</Title>
-      <span>Sign In with email and password</span>
+      <Title>already have an account?</Title>
+      <span>sign in with email and password</span>
       <form method="get" onSubmit={submitHandler}>
         <FormInputField
-          label="Email Address"
+          label="email address"
           fieldId="signIn-email-input"
           type="email"
           onChange={changeHandler}
@@ -66,7 +66,7 @@ const SignInForm = () => {
           required
         />
         <FormInputField
-          label="Password"
+          label="password"
           fieldId="signIn-password-input"
           type="password"
           onChange={changeHandler}

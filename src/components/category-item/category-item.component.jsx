@@ -16,7 +16,7 @@ const CategoryItem = ({ category }) => {
       <BackgroundImage imageUrl={imageUrl} />
       <CategoryBodyContainer>
         <h2>{title}</h2>
-        <p>Shop Now</p>
+        <p>shop now</p>
       </CategoryBodyContainer>
     </CategoryItemContainer>
   );

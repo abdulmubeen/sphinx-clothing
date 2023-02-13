@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../utils/devices/device";
 
 export const BaseButton = styled.button`
   min-width: 165px;
@@ -10,7 +11,7 @@ export const BaseButton = styled.button`
   font-size: 15px;
   background-color: black;
   color: white;
-  text-transform: uppercase;
+  text-transform: lowercase;
   font-family: "Roboto Condensed";
   font-weight: bolder;
   border: none;
@@ -22,6 +23,13 @@ export const BaseButton = styled.button`
     background-color: white;
     color: black;
     border: 1px solid black;
+  }
+
+  @media only screen and (${device.mobileS}) and (${device.mobileL}) {
+    min-width: 20px;
+    height: 40px;
+    line-height: 20px;
+    padding: 5px 15px;
   }
 `;
 export const GoogleSignInButton = styled(BaseButton)`
@@ -64,5 +72,10 @@ export const LoadingSpinner = styled.div`
     to {
       -webkit-transform: rotate(360deg);
     }
+  }
+
+  @media only screen and (${device.mobileS}) and (${device.mobileL}) {
+    width: 15px;
+    height: 15px;
   }
 `;

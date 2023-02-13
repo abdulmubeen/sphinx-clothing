@@ -1,9 +1,14 @@
 import styled from "styled-components";
+import { device } from "../../utils/devices/device";
 
 export const SignInContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 380px;
+
+  @media only screen and (${device.mobileS}) and (${device.mobileL}) {
+    width: 100%;
+  }
 `;
 export const Title = styled.h2`
   margin: 10px 0;

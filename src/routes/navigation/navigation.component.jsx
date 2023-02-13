@@ -26,14 +26,14 @@ const NavigationBar = () => {
           <BrandLogo className="logo" />
         </LogoContainer>
         <NavLinksContainer>
-          <NavLink to="/shop">SHOP</NavLink>
+          <NavLink to="/shop">shop</NavLink>
           {userDetails ? (
             <NavLink as="span" onClick={signOutUser}>
               {" "}
               SIGN OUT{" "}
             </NavLink>
           ) : (
-            <NavLink to="/auth">SIGN IN</NavLink>
+            <NavLink to="/auth">sign in</NavLink>
           )}
           <CartIcon />
         </NavLinksContainer>

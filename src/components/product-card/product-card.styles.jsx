@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../utils/devices/device";
 
 export const ProductCardContainer = styled.div`
   width: 100%;
@@ -41,7 +42,15 @@ export const Footer = styled.div`
 export const Name = styled.span`
   width: 90%;
   margin-bottom: 15px;
+
+  @media only screen and (${device.mobileS}) and (${device.mobileL}) {
+    width: 70%;
+  }
 `;
 export const Price = styled.span`
-  width: 12%;
+  width: 10%;
+
+  @media only screen and (${device.mobileS}) and (${device.mobileL}) {
+    width: 20%;
+  }
 `;

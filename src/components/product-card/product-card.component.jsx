@@ -19,7 +19,7 @@ const ProductCard = ({ product }) => {
     <ProductCardContainer>
       <img src={imageUrl} alt={`${name}`} />
       <Footer>
-        <Name>{name}</Name>
+        <Name>{name.toLowerCase()}</Name>
         <Price>{`$${price}`}</Price>
       </Footer>
       <Button

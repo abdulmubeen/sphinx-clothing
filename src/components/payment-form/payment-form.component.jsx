@@ -54,19 +54,17 @@ const PaymentForm = () => {
     }
   };
   return (
-    <div>
-      <PaymentFormContainer>
-        <FormContainer onSubmit={paymentHandler}>
-          <h2>Pay with your Card</h2>
-          <CardElement />
-          <PaymentButton
-            buttonType={BUTTON_TYPE_CLASSES.inverted}
-            isLoading={isProcessingPayment}
-            name="Pay Now"
-          ></PaymentButton>
-        </FormContainer>
-      </PaymentFormContainer>
-    </div>
+    <PaymentFormContainer>
+      <FormContainer onSubmit={paymentHandler}>
+        <h2>Pay with your Card</h2>
+        <CardElement />
+        <PaymentButton
+          buttonType={BUTTON_TYPE_CLASSES.inverted}
+          isLoading={isProcessingPayment}
+          name="Pay Now"
+        ></PaymentButton>
+      </FormContainer>
+    </PaymentFormContainer>
   );
 };
 

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../utils/devices/device";
 
 export const CheckoutItemContainer = styled.div`
   width: 100%;
@@ -18,16 +19,32 @@ export const ImageContainer = styled.div`
     height: 100%;
     border-radius: 5px;
   }
+
+  @media only screen and (${device.mobileS}) and (${device.mobileL}) {
+    width: 17%;
+  }
 `;
 export const Name = styled.span`
   width: 23%;
+  @media only screen and (${device.mobileS}) and (${device.mobileL}) {
+    width: 23%;
+    font-size: 15px;
+    margin-left: 10px;
+  }
 `;
 export const Price = styled.span`
   width: 23%;
+  @media only screen and (${device.mobileS}) and (${device.mobileL}) {
+    width: 15%;
+    margin-left: 30px;
+  }
 `;
 export const Quantity = styled.span`
   width: 23%;
   display: flex;
+  @media only screen and (${device.mobileS}) and (${device.mobileL}) {
+    width: 15%;
+  }
 `;
 export const Arrow = styled.div`
   cursor: pointer;

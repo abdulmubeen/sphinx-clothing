@@ -28,25 +28,25 @@ const Checkout = () => {
     <CheckoutContainer>
       <CheckoutHeader>
         <HeaderBlock>
-          <span>Product</span>
+          <span>product</span>
         </HeaderBlock>
         <HeaderBlock>
-          <span>Description</span>
+          <span>description</span>
         </HeaderBlock>
         <HeaderBlock>
-          <span>Quantity</span>
+          <span>quantity</span>
         </HeaderBlock>
         <HeaderBlock>
-          <span>Price</span>
+          <span>price</span>
         </HeaderBlock>
         <HeaderBlock>
-          <span>Remove</span>
+          <span>remove</span>
         </HeaderBlock>
       </CheckoutHeader>
       {cartItems.map((item) => (
         <CheckoutItem key={item.id} cartItem={item} />
       ))}
-      <Total>{`Total: $${cartTotal}`}</Total>
+      <Total>{`total: $${cartTotal}`}</Total>
       <PaymentForm />
     </CheckoutContainer>
   );

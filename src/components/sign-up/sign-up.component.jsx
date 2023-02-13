@@ -59,11 +59,11 @@ const SignUpForm = () => {
 
   return (
     <SignUpContainer>
-      <Title>Don't have an account?</Title>
-      <span>Sign Up with email and password</span>
+      <Title>don't have an account?</Title>
+      <span>sign up with email and password</span>
       <form method="get" onSubmit={submitHandler}>
         <FormInputField
-          label="Full Name"
+          label="full name"
           fieldId="name-input"
           type="text"
           onChange={changeHandler}
@@ -72,7 +72,7 @@ const SignUpForm = () => {
           required
         />
         <FormInputField
-          label="Email Address"
+          label="email address"
           fieldId="email-input"
           type="email"
           onChange={changeHandler}
@@ -82,7 +82,7 @@ const SignUpForm = () => {
         />
 
         <FormInputField
-          label="Password"
+          label="password"
           fieldId="password-input"
           type="password"
           onChange={changeHandler}
@@ -92,7 +92,7 @@ const SignUpForm = () => {
         />
 
         <FormInputField
-          label="Confirm Password"
+          label="confirm password"
           fieldId="cpassword-input"
           type="password"
           onChange={changeHandler}

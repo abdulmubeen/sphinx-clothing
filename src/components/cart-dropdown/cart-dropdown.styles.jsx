@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { BaseButton } from "../button/button.styles";
+import { device } from "../../utils/devices/device";
 
 export const CartDropdownContainer = styled.div`
   position: absolute;
@@ -17,6 +18,14 @@ export const CartDropdownContainer = styled.div`
   ${BaseButton} {
     margin-top: auto;
   }
+
+  @media only screen and (${device.mobileS}) and (${device.mobileL}) {
+    height: 350px;
+
+    ${BaseButton} {
+      margin-top: 30px;
+    }
+  }
 `;
 export const EmptyMessage = styled.span`
   font-size: 18px;
@@ -27,4 +36,8 @@ export const CartItems = styled.div`
   display: flex;
   flex-direction: column;
   overflow: scroll;
+
+  @media only screen and (${device.mobileS}) and (${device.mobileL}) {
+    height: 240px;
+  }
 `;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../utils/devices/device";
 
 export const BackgroundImage = styled.div`
   width: 100%;
@@ -18,12 +19,17 @@ export const CategoryBodyContainer = styled.div`
   background-color: white;
   opacity: 0.7;
   position: absolute;
+
+  @media only screen and (${device.mobileS}) and (${device.mobileL}) {
+    padding: 0 15px;
+  }
+
   h2 {
     font-weight: bold;
     margin: 0 6px 0;
     font-size: 22px;
     color: #4a4a4a;
-    text-transform: capitalize;
+    text-transform: lowercase;
   }
   p {
     font-weight: lighter;
