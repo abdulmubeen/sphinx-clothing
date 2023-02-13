@@ -36,7 +36,8 @@ provider.setCustomParameters({
 
 export const auth = getAuth(firebaseApp);
 export const db = getFirestore(firebaseApp);
-export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+export const signInWithGooglePopup = async () =>
+  await signInWithPopup(auth, provider);
 
 export const addCollectionAndDocuments = async (
   collectionKey,

@@ -1,9 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import FormInputField from "../form-input/form-input.component";
 import {
   signInUserWithEmailandPassword,
   signInWithGooglePopup,
-  getUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 
@@ -17,6 +17,7 @@ const defaultFormFields = {
 const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
+  const navigate = useNavigate();
 
   const resetForm = () => {
     setFormFields(defaultFormFields);
@@ -28,10 +29,9 @@ const SignInForm = () => {
     else if (!validatePassword(password)) alert("Please check your password");
     else {
       try {
-        const { user } = await signInUserWithEmailandPassword(email, password);
-        const userData = await getUserDocumentFromAuth(user);
-        console.log(userData);
+        await signInUserWithEmailandPassword(email, password);
         resetForm();
+        navigate("/");
       } catch (error) {
         console.log(error.code, error.message);
       }
@@ -39,7 +39,12 @@ const SignInForm = () => {
   };
 
   const signInWithGoogle = async () => {
-    await signInWithGooglePopup();
+    try {
+      await signInWithGooglePopup();
+      navigate("/");
+    } catch (error) {
+      console.log(error.code, error.message);
+    }
   };
 
   const validateEmail = (email) => /^[^@]+@\w+(\.\w+)+\w$/.test(email);

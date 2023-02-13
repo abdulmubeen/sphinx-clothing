@@ -30,7 +30,7 @@ const NavigationBar = () => {
           {userDetails ? (
             <NavLink as="span" onClick={signOutUser}>
               {" "}
-              SIGN OUT{" "}
+              sign out{" "}
             </NavLink>
           ) : (
             <NavLink to="/auth">sign in</NavLink>

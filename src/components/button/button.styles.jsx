@@ -28,7 +28,7 @@ export const BaseButton = styled.button`
   @media only screen and (${device.mobileS}) and (${device.mobileL}) {
     min-width: 20px;
     height: 40px;
-    line-height: 20px;
+    line-height: 27px;
     padding: 5px 15px;
   }
 `;

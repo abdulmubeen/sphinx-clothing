@@ -10,6 +10,7 @@ import {
   CheckoutHeader,
   HeaderBlock,
   Total,
+  EmptyMessage,
 } from "./checkout.styles.jsx";
 
 const Checkout = () => {
@@ -43,9 +44,11 @@ const Checkout = () => {
           <span>remove</span>
         </HeaderBlock>
       </CheckoutHeader>
-      {cartItems.map((item) => (
-        <CheckoutItem key={item.id} cartItem={item} />
-      ))}
+      {cartItems.length ? (
+        cartItems.map((item) => <CheckoutItem key={item.id} cartItem={item} />)
+      ) : (
+        <EmptyMessage>Your cart is empty</EmptyMessage>
+      )}
       <Total>{`total: $${cartTotal}`}</Total>
       <PaymentForm />
     </CheckoutContainer>
